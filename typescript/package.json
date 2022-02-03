@@ -1,0 +1,29 @@
+{
+  "name": "sample-project",
+  "version": "0.0.1",
+  "description": "Template for TypeScript project (no web stuff) and other tooling.",
+  "license": "MIT",
+  "author": "Martin Krauskopf <martin.krauskopf@gmail.com>",
+  "scripts": {
+    "run": "ts-node src/computation.ts",
+    "test": "jest",
+    "prettier": "prettier -c src && prettier-package-json -l ./package.json",
+    "prettier:fix": "prettier -w src && prettier-package-json --write ./package.json"
+  },
+  "devDependencies": {
+    "@types/jest": "27.4.0",
+    "import-sort-style-module": "6.0.0",
+    "jest": "27.4.7",
+    "prettier": "2.5.1",
+    "prettier-package-json": "2.6.0",
+    "prettier-plugin-import-sort": "0.0.7",
+    "ts-jest": "27.1.3",
+    "ts-node": "10.4.0",
+    "typescript": "4.5.5"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.1.2"
+  }
+}
