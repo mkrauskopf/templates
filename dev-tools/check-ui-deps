@@ -1,0 +1,13 @@
+#!/bin/sh
+
+root_dir=`realpath "$(dirname "$0")"/..`
+. "$root_dir/dev-tools/base"
+
+set -euo pipefail
+
+cd $root_dir
+
+for i in "${modules[@]}"; do
+  echo "${BLUE}Checking module: $i${NC}"
+  npx npm-check-updates --cwd $i "$@"
+done
