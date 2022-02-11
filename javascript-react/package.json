@@ -21,7 +21,7 @@
     "babel-loader": "8.2.3",
     "html-webpack-plugin": "5.5.0",
     "import-sort-style-module": "6.0.0",
-    "jest": "27.4.7",
+    "jest": "27.5.1",
     "prettier": "2.5.1",
     "prettier-package-json": "2.6.0",
     "prettier-plugin-import-sort": "0.0.7",
