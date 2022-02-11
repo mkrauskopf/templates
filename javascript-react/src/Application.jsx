@@ -1,5 +1,9 @@
 import React from 'react'
 
-const Application = () => <div>Hello from React 🎉</div>
+import { welcomeMessage } from './welcomeMessage'
+
+const Application = () => {
+  return <div>{welcomeMessage}</div>
+}
 
 export default Application
