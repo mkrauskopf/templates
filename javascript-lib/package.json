@@ -1,0 +1,35 @@
+{
+  "name": "calculator",
+  "version": "0.0.1",
+  "description": "Template for JavaScript library.",
+  "license": "MIT",
+  "author": "Martin Krauskopf <martin.krauskopf@gmail.com>",
+  "main": "dist/calculator.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:dist": "run-s clean dist",
+    "dist": "webpack",
+    "test": "jest",
+    "prettier": "prettier -c src && prettier-package-json -l ./package.json",
+    "prettier:fix": "prettier -w src && prettier-package-json --write ./package.json"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "7.16.11",
+    "import-sort-style-module": "6.0.0",
+    "jest": "27.5.1",
+    "prettier": "2.5.1",
+    "prettier-package-json": "2.6.0",
+    "prettier-plugin-import-sort": "0.0.7",
+    "rimraf": "3.0.2",
+    "webpack": "5.68.0",
+    "webpack-cli": "4.9.2"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.1.2"
+  }
+}
