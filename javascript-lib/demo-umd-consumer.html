@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Demo for javascript-lib</title>
+    <script src="dist/calculator.js"></script>
+  </head>
+  <body>
+    Demo page for the <code>javascript-lib</code> artifact.
+    <p>Calculation done using <code>calculator.js</code>: <code id="result" style="color: orangered"></code></p>
+  </body>
+  <script>
+    const result = document.getElementById('result')
+    result.append(`2 + 4 = ${calculator.add(2, 4)}` )
+  </script>
+</html>
