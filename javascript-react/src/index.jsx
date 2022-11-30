@@ -1,6 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 import Application from './Application'
 
-ReactDOM.render(<Application />, document.getElementById('react-mount-point'))
+const container = document.getElementById('react-mount-point')
+createRoot(container).render(<Application />)
