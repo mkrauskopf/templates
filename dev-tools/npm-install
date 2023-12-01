@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# A simple script for reinstalling UI deps.
+
+root_dir=`realpath "$(dirname "$0")"/..`
+. "$root_dir/dev-tools/base"
+
+# Nice! 🌈
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+if [ "${1-}" == "--ci" ]; then
+  use_ci=true
+elif [ "${1-}" == "--install" ]; then
+  use_ci=false
+else
+  echo "Usage: $0 [--ci | --install]"
+  exit 1
+fi
+
+installPackages() {
+  echo "${BLUE}Installing NPM for module: $1${NC}"
+  cd "$root_dir/$1"
+  if [ "$use_ci" = true ]; then
+    npm ci
+  else
+    rm -rf node_modules package-lock.json
+    npm install --loglevel=warn --progress
+  fi
+}
+
+set -euo pipefail
+
+for i in "${modules[@]}"; do installPackages $i;  done
