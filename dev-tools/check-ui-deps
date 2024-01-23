@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-root_dir=`realpath "$(dirname "$0")"/..`
+root_dir=$(realpath "$(dirname "$0")"/..)
 . "$root_dir/dev-tools/base"
 
 # Nice! 🌈
@@ -9,9 +9,9 @@ NC='\033[0m' # No Color
 
 set -euo pipefail
 
-cd $root_dir
+cd "$root_dir"
 
 for i in "${modules[@]}"; do
-  echo "${BLUE}Checking module: $i${NC}"
-  npx npm-check-updates --cwd $i "$@"
+  echo -e "${BLUE}Checking module: $i${NC}"
+  npx npm-check-updates --cwd "$i" "$@"
 done

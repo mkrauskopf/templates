@@ -1,12 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
-root_dir=`realpath "$(dirname "$0")"/..`
+root_dir=$(realpath "$(dirname "$0")"/..)
 . "$root_dir/dev-tools/base"
 
 node_bin='./node_modules/.bin'
 
 prettifyModule() {
-  echo "${BLUE}Running prettier for module: $1${NC}"
+  echo -e "${BLUE}Running prettier for module: $1${NC}"
   cd "$root_dir/$1"
   
   $node_bin/prettier -w src
@@ -15,4 +15,4 @@ prettifyModule() {
 
 set -euo pipefail
 
-for i in "${modules[@]}"; do prettifyModule $i;  done
+for i in "${modules[@]}"; do prettifyModule "$i";  done

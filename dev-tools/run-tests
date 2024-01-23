@@ -1,15 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
-root_dir=`realpath "$(dirname "$0")"/..`
+root_dir=$(realpath "$(dirname "$0")"/..)
 . "$root_dir/dev-tools/base"
 
 function testModule() {
-  echo "${BLUE}Testing module: $1${NC}"
-  npm run -C $1 test
+  echo -e "${BLUE}Testing module: $1${NC}"
+  npm run -C "$1" test
 }
 
 set -euo pipefail
 
-cd $root_dir
+cd "$root_dir"
 
 for i in "${modules[@]}"; do testModule "$i";  done

@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # A simple script for reinstalling UI deps.
 
-root_dir=`realpath "$(dirname "$0")"/..`
+root_dir=$(realpath "$(dirname "$0")"/..)
 . "$root_dir/dev-tools/base"
 
 # Nice! 🌈
@@ -19,7 +19,7 @@ else
 fi
 
 installPackages() {
-  echo "${BLUE}Installing NPM for module: $1${NC}"
+  echo -e "${BLUE}Installing NPM for module: $1${NC}"
   cd "$root_dir/$1"
   if [ "$use_ci" = true ]; then
     npm ci
@@ -31,4 +31,4 @@ installPackages() {
 
 set -euo pipefail
 
-for i in "${modules[@]}"; do installPackages $i;  done
+for i in "${modules[@]}"; do installPackages "$i";  done
