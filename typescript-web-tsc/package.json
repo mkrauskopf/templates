@@ -1,0 +1,28 @@
+{
+  "name": "sample-project",
+  "version": "0.0.1",
+  "description": "Template for TypeScript web project based on `tsc` only.",
+  "license": "MIT",
+  "author": "Martin Krauskopf <martin.krauskopf@gmail.com>",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "clean:build": "run-s clean build",
+    "prettier": "prettier -c src && prettier-package-json -l ./package.json",
+    "prettier:fix": "prettier -w src && prettier-package-json --write ./package.json",
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "import-sort-style-module": "6.0.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "3.2.4",
+    "prettier-package-json": "2.8.0",
+    "prettier-plugin-import-sort": "0.0.7",
+    "typescript": "5.3.3"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "20.10.0",
+    "npm": "10.2.3"
+  }
+}
