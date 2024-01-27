@@ -7,7 +7,7 @@ NC='\033[0m' # No Color
 modules=(
   'javascript-lib'
   'javascript-react'
-  'javascript-web'
+  'javascript-webpack'
   'typescript'
-  'typescript-web'
+  'typescript-webpack'
 )
